@@ -1,11 +1,11 @@
 #!/usr/bin/python
 import re
-
+from collections import OrderedDict
 
 def parser(record_file_name="AP_signal.txt"):
     record = open(record_file_name, 'r')
 
-    ap_dic = {}
+    ap_dic = OrderedDict()
 
     position = ""
     for line in record:
@@ -30,26 +30,21 @@ def parser(record_file_name="AP_signal.txt"):
                     break
             SSID = ' '.join(data[0:mac_pos])
             RSSI = data[mac_pos + 1]
-            CHANNEL = data[mac_pos + 2]
-            HT = data[mac_pos + 3]
-            CC = data[mac_pos + 4]
-            SECURITY = data[mac_pos + 5]
-            if MAC_addr not in ap_dic:
-                ap_dic[MAC_addr] = {}
-                ap_dic[MAC_addr]["vector"] = []
-                ap_dic[MAC_addr]["SSID"] = SSID
-            ap_dic[MAC_addr]["vector"].append({"position": position, "RSSI": RSSI, "CHANNEL": CHANNEL,
-                                               "HT": HT, "CC": CC, "SECURITY": SECURITY})
+            # CHANNEL = data[mac_pos + 2]
+            # HT = data[mac_pos + 3]
+            # CC = data[mac_pos + 4]
+            # SECURITY = data[mac_pos + 5]
+            if position not in ap_dic:
+                ap_dic[position] = {}
+            ap_dic[position][MAC_addr] = {}
+            ap_dic[position][MAC_addr]["SSID"] = SSID
+            ap_dic[position][MAC_addr]["RSSI"] = int(RSSI)
     record.close()
 
-    output = []
-    for mac, ap_record in ap_dic.iteritems():
-        for pos_info in ap_record["vector"]:
-            output.append("%s %10s %10s %20s" % (mac, pos_info["position"], pos_info["RSSI"],
-                                                 ap_record["SSID"]))
-    return output
+    return ap_dic
 
 if __name__ == "__main__":
-    output = parser()
-    for line in output:
-        print line
+    ap_dic = parser()
+    for pos, ap_record in ap_dic.iteritems():
+        for mac, info in ap_record.iteritems():
+            print "%s %10s %10s %20s" % (pos, mac, info["RSSI"], info["SSID"])
