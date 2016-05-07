@@ -1118,6 +1118,73 @@
                              nyu 58:bf:ea:41:0e:e0 -57  11      Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
                              nyu 58:bf:ea:60:a8:40 -48  11      Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
                       FiOS-249N9 c8:a7:0a:aa:84:0a -75  11      Y  US WPA2(PSK/AES/AES) 
+***  16
+                            SSID BSSID             RSSI CHANNEL HT CC SECURITY (auth/unicast/group)
+                             nyu 58:bf:ea:41:9c:6f -62  149     Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
+                         eduroam 58:bf:ea:41:93:6d -89  149     Y  US WPA2(802.1x/AES/AES) 
+               FelixWirelessNetC 58:6d:8f:17:8a:3f -85  157,+1  Y  -- WPA(PSK/AES,TKIP/TKIP) WPA2(PSK/AES,TKIP/TKIP) 
+                    DG1670AD2-5G 14:cf:e2:a2:1d:d5 -90  40,-1   Y  US WPA2(PSK/AES/AES) 
+                    frenchfry203 00:7f:28:be:16:fb -86  1       N  US WEP
+                          HUC-NY 18:64:72:75:17:42 -87  1       Y  -- WPA2(PSK/AES/AES) 
+          Robert's Wi-Fi Network 7c:d1:c3:af:b5:df -81  1       Y  US WPA2(PSK/AES/AES) 
+                           VLoft f8:e4:fb:4f:3d:54 -83  3       Y  US WPA(PSK/AES/AES) WPA2(PSK/AES/AES) 
+                   nighthawkwifi e8:fc:af:f5:b9:d0 -80  5       Y  -- WPA2(PSK/AES/AES) 
+                         eduroam 58:bf:ea:41:9c:62 -62  6       Y  US WPA2(802.1x/AES/AES) 
+                         eduroam 58:bf:ea:60:89:7d -91  64      Y  US WPA2(802.1x/AES/AES) 
+                         attwifi 24:c9:a1:12:06:dc -84  100     Y  US NONE
+                         attwifi 24:c9:a1:15:ca:2c -84  108     Y  US NONE
+                    ArianaMercer 34:12:98:05:fe:d5 -92  132     Y  CA WPA(PSK/TKIP/TKIP) WPA2(PSK/AES,TKIP/TKIP) 
+                             nyu 58:bf:ea:40:44:ef -89  56      Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
+            Poodle Guest Network f2:28:8d:0a:bf:90 -79  11      Y  US WPA2(PSK/AES/AES) 
+                  Poodle Command f0:99:bf:0a:8d:28 -80  11      Y  US WPA2(PSK/AES/AES) 
+                         attwifi 24:c9:a1:15:cb:6c -79  52      Y  US NONE
+                         eduroam 58:bf:ea:41:96:4d -64  52      Y  US WPA2(802.1x/AES/AES) 
+                             nyu 58:bf:ea:41:96:4f -63  52      Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
+                        nyuguest 58:bf:ea:41:96:4e -64  52      Y  US NONE
+                         attwifi 24:c9:a1:12:07:bc -90  136     Y  US NONE
+                         attwifi 24:c9:a1:12:3d:6c -87  104     Y  US NONE
+                         attwifi 54:3d:37:26:5d:3c -82  104     Y  US NONE
+                        nyuguest 58:bf:ea:60:a8:41 -29  11      Y  US NONE
+                         eduroam 58:bf:ea:41:0e:e2 -69  11      Y  US WPA2(802.1x/AES/AES) 
+                             nyu 58:bf:ea:60:a8:40 -30  11      Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
+                        nyuguest 58:bf:ea:41:0e:e1 -69  11      Y  US NONE
+                             nyu 58:bf:ea:41:0e:e0 -69  11      Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
+                         eduroam 58:bf:ea:60:a8:42 -29  11      Y  US WPA2(802.1x/AES/AES) 
+                          DE-YAN ec:0e:c4:74:a7:0a -74  11      Y  -- WPA2(PSK/AES/AES) 
+                   Seti Alpha VI f0:79:59:d5:94:a0 -85  6       Y  -- WPA2(PSK/AES/AES) 
+                         linksys 00:1d:7e:fe:78:af -80  6       N  -- NONE
+                         avK-MBR 00:24:73:5e:e8:59 -78  6       Y  -- WPA(PSK/AES/AES) 
+                        nyuguest 58:bf:ea:41:9c:61 -70  6       Y  US NONE
+                             nyu 58:bf:ea:41:9c:60 -71  6       Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
+                     704 Network 6c:70:9f:de:08:e0 -80  6       Y  US WPA2(PSK/AES/AES) 
+                        nyuguest 58:bf:ea:60:01:a1 -50  6       Y  US NONE
+                         eduroam 58:bf:ea:60:01:a2 -50  6       Y  US WPA2(802.1x/AES/AES) 
+                             nyu 58:bf:ea:60:01:a0 -50  6       Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
+                         eduroam 58:bf:ea:41:6f:42 -63  1       Y  US WPA2(802.1x/AES/AES) 
+                         eduroam 58:bf:ea:41:96:42 -50  1       Y  US WPA2(802.1x/AES/AES) 
+                             nyu 58:bf:ea:41:96:40 -50  1       Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
+                         eduroam 58:bf:ea:41:92:42 -66  1       Y  US WPA2(802.1x/AES/AES) 
+                        nyuguest 58:bf:ea:41:92:41 -66  1       Y  US NONE
+                        nyuguest 58:bf:ea:41:8b:01 -74  1       Y  US NONE
+                        nyuguest 58:bf:ea:41:96:41 -50  1       Y  US NONE
+           Daryl's Wi-Fi Network b8:8d:12:61:0f:2f -85  1       Y  US WPA2(PSK/AES/AES) 
+                             nyu 58:bf:ea:41:92:40 -64  1       Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
+                     PESTO928-5G ac:b3:13:ad:4d:45 -88  40,-1   Y  US WPA2(PSK/AES/AES) 
+                    TG1672GE2-5G 40:70:09:dd:b9:e5 -80  40,-1   Y  US WPA2(PSK/AES/AES) 
+                        RDJ36-5G 10:9f:a9:76:e4:c3 -84  36,+1   Y  -- WPA2(PSK/AES/AES) 
+                     viewlift1ae 34:12:98:05:9e:03 -90  149     Y  US WPA2(PSK/AES/AES) 
+                        nyuguest 58:bf:ea:41:0e:ee -82  149     Y  US NONE
+                        nyuguest 58:bf:ea:41:9c:6e -76  149     Y  US NONE
+                         eduroam 58:bf:ea:41:9c:6d -75  149     Y  US WPA2(802.1x/AES/AES) 
+                        nyuguest 58:bf:ea:60:01:ae -63  149     Y  US NONE
+                         eduroam 58:bf:ea:60:01:ad -63  149     Y  US WPA2(802.1x/AES/AES) 
+                             nyu 58:bf:ea:60:01:af -62  149     Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
+                        nyuguest 58:bf:ea:41:6f:4e -76  60      Y  US NONE
+                         eduroam 58:bf:ea:41:6f:4d -77  60      Y  US WPA2(802.1x/AES/AES) 
+                        nyuguest 58:bf:ea:60:a8:4e -40  60      Y  US NONE
+                         eduroam 58:bf:ea:60:a8:4d -39  60      Y  US WPA2(802.1x/AES/AES) 
+                             nyu 58:bf:ea:41:6f:4f -77  60      Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
+                             nyu 58:bf:ea:60:a8:4f -39  60      Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
 ***  17
                             SSID BSSID             RSSI CHANNEL HT CC SECURITY (auth/unicast/group)
                         nyuguest 58:bf:ea:60:9c:51 -71  11      Y  US NONE
@@ -1308,73 +1375,6 @@
                          eduroam 58:bf:ea:41:6f:4d -77  60      Y  US WPA2(802.1x/AES/AES) 
                              nyu 58:bf:ea:60:a8:4f -53  60      Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
                              nyu 58:bf:ea:41:6f:4f -78  60      Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
-***  16
-                            SSID BSSID             RSSI CHANNEL HT CC SECURITY (auth/unicast/group)
-                             nyu 58:bf:ea:41:9c:6f -62  149     Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
-                         eduroam 58:bf:ea:41:93:6d -89  149     Y  US WPA2(802.1x/AES/AES) 
-               FelixWirelessNetC 58:6d:8f:17:8a:3f -85  157,+1  Y  -- WPA(PSK/AES,TKIP/TKIP) WPA2(PSK/AES,TKIP/TKIP) 
-                    DG1670AD2-5G 14:cf:e2:a2:1d:d5 -90  40,-1   Y  US WPA2(PSK/AES/AES) 
-                    frenchfry203 00:7f:28:be:16:fb -86  1       N  US WEP
-                          HUC-NY 18:64:72:75:17:42 -87  1       Y  -- WPA2(PSK/AES/AES) 
-          Robert's Wi-Fi Network 7c:d1:c3:af:b5:df -81  1       Y  US WPA2(PSK/AES/AES) 
-                           VLoft f8:e4:fb:4f:3d:54 -83  3       Y  US WPA(PSK/AES/AES) WPA2(PSK/AES/AES) 
-                   nighthawkwifi e8:fc:af:f5:b9:d0 -80  5       Y  -- WPA2(PSK/AES/AES) 
-                         eduroam 58:bf:ea:41:9c:62 -62  6       Y  US WPA2(802.1x/AES/AES) 
-                         eduroam 58:bf:ea:60:89:7d -91  64      Y  US WPA2(802.1x/AES/AES) 
-                         attwifi 24:c9:a1:12:06:dc -84  100     Y  US NONE
-                         attwifi 24:c9:a1:15:ca:2c -84  108     Y  US NONE
-                    ArianaMercer 34:12:98:05:fe:d5 -92  132     Y  CA WPA(PSK/TKIP/TKIP) WPA2(PSK/AES,TKIP/TKIP) 
-                             nyu 58:bf:ea:40:44:ef -89  56      Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
-            Poodle Guest Network f2:28:8d:0a:bf:90 -79  11      Y  US WPA2(PSK/AES/AES) 
-                  Poodle Command f0:99:bf:0a:8d:28 -80  11      Y  US WPA2(PSK/AES/AES) 
-                         attwifi 24:c9:a1:15:cb:6c -79  52      Y  US NONE
-                         eduroam 58:bf:ea:41:96:4d -64  52      Y  US WPA2(802.1x/AES/AES) 
-                             nyu 58:bf:ea:41:96:4f -63  52      Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
-                        nyuguest 58:bf:ea:41:96:4e -64  52      Y  US NONE
-                         attwifi 24:c9:a1:12:07:bc -90  136     Y  US NONE
-                         attwifi 24:c9:a1:12:3d:6c -87  104     Y  US NONE
-                         attwifi 54:3d:37:26:5d:3c -82  104     Y  US NONE
-                        nyuguest 58:bf:ea:60:a8:41 -29  11      Y  US NONE
-                         eduroam 58:bf:ea:41:0e:e2 -69  11      Y  US WPA2(802.1x/AES/AES) 
-                             nyu 58:bf:ea:60:a8:40 -30  11      Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
-                        nyuguest 58:bf:ea:41:0e:e1 -69  11      Y  US NONE
-                             nyu 58:bf:ea:41:0e:e0 -69  11      Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
-                         eduroam 58:bf:ea:60:a8:42 -29  11      Y  US WPA2(802.1x/AES/AES) 
-                          DE-YAN ec:0e:c4:74:a7:0a -74  11      Y  -- WPA2(PSK/AES/AES) 
-                   Seti Alpha VI f0:79:59:d5:94:a0 -85  6       Y  -- WPA2(PSK/AES/AES) 
-                         linksys 00:1d:7e:fe:78:af -80  6       N  -- NONE
-                         avK-MBR 00:24:73:5e:e8:59 -78  6       Y  -- WPA(PSK/AES/AES) 
-                        nyuguest 58:bf:ea:41:9c:61 -70  6       Y  US NONE
-                             nyu 58:bf:ea:41:9c:60 -71  6       Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
-                     704 Network 6c:70:9f:de:08:e0 -80  6       Y  US WPA2(PSK/AES/AES) 
-                        nyuguest 58:bf:ea:60:01:a1 -50  6       Y  US NONE
-                         eduroam 58:bf:ea:60:01:a2 -50  6       Y  US WPA2(802.1x/AES/AES) 
-                             nyu 58:bf:ea:60:01:a0 -50  6       Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
-                         eduroam 58:bf:ea:41:6f:42 -63  1       Y  US WPA2(802.1x/AES/AES) 
-                         eduroam 58:bf:ea:41:96:42 -50  1       Y  US WPA2(802.1x/AES/AES) 
-                             nyu 58:bf:ea:41:96:40 -50  1       Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
-                         eduroam 58:bf:ea:41:92:42 -66  1       Y  US WPA2(802.1x/AES/AES) 
-                        nyuguest 58:bf:ea:41:92:41 -66  1       Y  US NONE
-                        nyuguest 58:bf:ea:41:8b:01 -74  1       Y  US NONE
-                        nyuguest 58:bf:ea:41:96:41 -50  1       Y  US NONE
-           Daryl's Wi-Fi Network b8:8d:12:61:0f:2f -85  1       Y  US WPA2(PSK/AES/AES) 
-                             nyu 58:bf:ea:41:92:40 -64  1       Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
-                     PESTO928-5G ac:b3:13:ad:4d:45 -88  40,-1   Y  US WPA2(PSK/AES/AES) 
-                    TG1672GE2-5G 40:70:09:dd:b9:e5 -80  40,-1   Y  US WPA2(PSK/AES/AES) 
-                        RDJ36-5G 10:9f:a9:76:e4:c3 -84  36,+1   Y  -- WPA2(PSK/AES/AES) 
-                     viewlift1ae 34:12:98:05:9e:03 -90  149     Y  US WPA2(PSK/AES/AES) 
-                        nyuguest 58:bf:ea:41:0e:ee -82  149     Y  US NONE
-                        nyuguest 58:bf:ea:41:9c:6e -76  149     Y  US NONE
-                         eduroam 58:bf:ea:41:9c:6d -75  149     Y  US WPA2(802.1x/AES/AES) 
-                        nyuguest 58:bf:ea:60:01:ae -63  149     Y  US NONE
-                         eduroam 58:bf:ea:60:01:ad -63  149     Y  US WPA2(802.1x/AES/AES) 
-                             nyu 58:bf:ea:60:01:af -62  149     Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
-                        nyuguest 58:bf:ea:41:6f:4e -76  60      Y  US NONE
-                         eduroam 58:bf:ea:41:6f:4d -77  60      Y  US WPA2(802.1x/AES/AES) 
-                        nyuguest 58:bf:ea:60:a8:4e -40  60      Y  US NONE
-                         eduroam 58:bf:ea:60:a8:4d -39  60      Y  US WPA2(802.1x/AES/AES) 
-                             nyu 58:bf:ea:41:6f:4f -77  60      Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
-                             nyu 58:bf:ea:60:a8:4f -39  60      Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 
 ***  19
                             SSID BSSID             RSSI CHANNEL HT CC SECURITY (auth/unicast/group)
                              nyu 58:bf:ea:41:9c:6f -62  149     Y  US WPA(802.1x/TKIP/TKIP) WPA2(802.1x/AES/TKIP) 

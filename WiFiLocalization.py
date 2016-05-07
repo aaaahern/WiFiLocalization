@@ -2,15 +2,26 @@
 import copy
 from Tkinter import *
 import tkFileDialog
+import tkFont
 from PIL import ImageTk, Image, ImageDraw, ImageFont
 import os
 import AP_signal_parser
 import math
+import operator
+from collections import OrderedDict
 
+# map image
 PIC_PATH = "Courant-library-floorplan.jpg"
+# map signal data file
+COURANT_SIGNAL_FILE = "AP_signal.txt"
+# map mac address to SSID dictionary
+SSID_DICT = AP_signal_parser.get_SSID_dict(COURANT_SIGNAL_FILE)
+
+DISTANCE_THRESHOLD = 100
 
 FONT_PATH = os.environ.get("FONT_PATH", "/Library/Fonts/Times New Roman.ttf")
 
+# map signal data point
 MAP_DATA_COR = []
 MAP_DATA_COR.append((921, 436))
 MAP_DATA_COR.append((751, 433))
@@ -33,9 +44,45 @@ MAP_DATA_COR.append((938, 62))
 MAP_DATA_COR.append((917, 245))
 MAP_DATA_COR.append((862, 364))
 
+
+class SignalDataDialog:
+    """
+    Predicted Signal Data Dialog
+    """
+    def __init__(self, parent, signal):
+        top = self.top = Toplevel(parent)
+        title_font = tkFont.Font(weight=tkFont.BOLD)
+        Label(top, text="Predicted WiFi Signal", font=title_font).pack()
+
+        scrollbar = Scrollbar(top)
+        scrollbar.pack(side=RIGHT, fill=Y)
+
+        listbox = Listbox(top, yscrollcommand=scrollbar.set, borderwidth=0, height=20, width=50)
+
+        # sort in ascending ordier
+        sorted_x = sorted(signal.items(), key=operator.itemgetter(1))
+        sorted_x.reverse()
+        signal = OrderedDict(sorted_x)
+        for mac, rssi in signal.iteritems():
+            listbox.insert(END, "%20s %20s: %5d" % (SSID_DICT[mac], mac, rssi))
+        listbox.pack(side=LEFT, fill=BOTH)
+
+        scrollbar.config(command=listbox.yview)
+
+
 class WiFiLocalization(Frame):
+    """
+    WiFi Localization Application GUI
+    """
     @staticmethod
     def calcTargetLocation(map_data, target_data):
+        """
+        Calculate target position by signal strength
+        measured at this position
+        :param map_data: parsed map signal data from AP_signal_parser.parser()
+        :param target_data: parsed target position signal data from AP_signal_parser.parser()
+        :return: target coordinate x, y
+        """
         target_avg_rssi = 0
 
         for mac, data in target_data[target_data.keys()[0]].iteritems():
@@ -91,22 +138,71 @@ class WiFiLocalization(Frame):
 
         return target_x, target_y
 
+    @staticmethod
+    def calcTargetSignal(x, y, map_data):
+        """
+        Calculate predicted AP signal at target position
+        :param x: target position coordinate
+        :param y: target position coordinate
+        :param map_data: parsed map signal data from AP_signal_parser.parser()
+        :return: possible AP signal mac address and RSSI
+        """
+        target_signal_dict = {}
+        distances = []
+        candidate_position_list = []
+        min_distance = sys.float_info.max
+        for i in range(0, len(MAP_DATA_COR)):
+            distance = math.sqrt((MAP_DATA_COR[i][0]-x)**2 + (MAP_DATA_COR[i][1]-y)**2)
+            distances.append(distance)
+
+            if distance < min_distance:
+                min_distance = distance
+
+        # find all neighbor point (distance less than threshold)
+        for i in range(0, len(distances)):
+            if distances[i] - min_distance < DISTANCE_THRESHOLD:
+                candidate_position_list.append(i)
+        if len(candidate_position_list) == 0:
+            print >>sys.stderr, "No candidate position, target point is too far away from map data point"
+            return target_signal_dict
+
+        candidate_distance_sum = 0
+        all_signal_set = set()
+        for candidate in candidate_position_list:
+            print "Distance to point %d: %f" % (candidate+1, distances[candidate])
+            candidate_distance_sum += distances[candidate]
+            for mac in map_data[str(candidate+1)]:
+                all_signal_set.add(mac)
+
+        for mac in all_signal_set:
+            target_signal_dict[mac] = 0
+            for candidate in candidate_position_list:
+                if mac in map_data[str(candidate+1)]:
+                    rssi = map_data[str(candidate+1)][mac]["RSSI"]
+                else:
+                    rssi = -100
+                target_signal_dict[mac] += rssi * distances[candidate]/candidate_distance_sum
+
+        return target_signal_dict
+
     def localizeTarget(self):
         self.file_opt = {}
         self.file_opt['initialdir'] = os.getcwd()
         self.file_opt['parent'] = root
         self.file_opt['title'] = 'Open target AP signal file'
         filename = tkFileDialog.askopenfilename(**self.file_opt)
-        print filename
 
-        courant_data = AP_signal_parser.parser()
-        target_data = AP_signal_parser.parser("target_location_signal.txt")
+        target_data = AP_signal_parser.parser(filename)
 
-        target_x, target_y = self.calcTargetLocation(courant_data, target_data)
+        target_x, target_y = self.calcTargetLocation(self.courant_data, target_data)
 
         self.drawPoint(target_x, target_y)
 
     def drawOriMap(self):
+        """
+        Draw map signal data point on map.
+        New point is drawed on this map.
+        """
         draw = ImageDraw.Draw(self.oriCourantLibMap)
         font = ImageFont.truetype("Times New Roman.ttf", 30)
         for i in range(0, len(MAP_DATA_COR)):
@@ -134,10 +230,6 @@ class WiFiLocalization(Frame):
         self.localizeButton["command"] = self.localizeTarget
         self.localizeButton.pack({"side": "top"})
 
-        # self.img = ImageTk.PhotoImage(self.courantLibMap)
-        # self.panel = Label(self, image=self.img)
-        # self.panel.pack(side="bottom", fill="both", expand="yes")
-
         self.frame = Frame(self, bd=2, relief=SUNKEN)
         self.frame.grid_rowconfigure(0, weight=1)
         self.frame.grid_columnconfigure(0, weight=1)
@@ -152,13 +244,18 @@ class WiFiLocalization(Frame):
         self.canvas.config(scrollregion=self.canvas.bbox(ALL))
 
         def click_handler(event):
-            print (event.x, event.y)
+            print "Click point:", (event.x, event.y)
             self.drawPoint(event.x, event.y)
+            signal = self.calcTargetSignal(event.x, event.y, self.courant_data)
 
-        # mouseclick event
+            d = SignalDataDialog(self, signal)
+            self.wait_window(d.top)
+
+        # mouse click event
         self.canvas.bind("<Button 1>", click_handler)
 
-    def __init__(self, master=None):
+    def __init__(self, courantSignalFile, master=None):
+        self.courant_data = AP_signal_parser.parser(courantSignalFile)
         master.title("WiFi Localization")
         Frame.__init__(self, master)
         self.pack()
@@ -170,5 +267,5 @@ class WiFiLocalization(Frame):
 
 if __name__ == "__main__":
     root = Tk()
-    app = WiFiLocalization(master=root)
+    app = WiFiLocalization(COURANT_SIGNAL_FILE, master=root)
     app.mainloop()
