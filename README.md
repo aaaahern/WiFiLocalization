@@ -57,9 +57,11 @@ Click random point on the map
 
 ## Observation and causes of errors
 1. Accuracy is high if the target point is surrounding by other points and is low when there is no point on the one side of the target point. For example, accuracy is low when target point is on windows. This algorithm is like trilateration, using triangle to localize. I think that having test points on window could guarantee all target point is surrounding by test points, and then increase accuracy. 
+
 ![window_point](https://raw.githubusercontent.com/aaaahern/WiFiLocalization/master/img/test_point_on_window.png)
 
 2. Due to the blocking by bookshelfs and walls, using the distance between target point to test point is naive. 
+
 ![wall_effect](https://raw.githubusercontent.com/aaaahern/WiFiLocalization/master/img/wall_effect.png)
 
 
