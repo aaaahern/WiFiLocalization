@@ -9,11 +9,11 @@ import AP_signal_parser
 import math
 import operator
 from collections import OrderedDict
-
+print os.getcwd()
 # map image
 PIC_PATH = "Courant-library-floorplan.jpg"
 # map signal data file
-COURANT_SIGNAL_FILE = "AP_signal.txt"
+COURANT_SIGNAL_FILE = "Courant_library_AP_signal.txt"
 # map mac address to SSID dictionary
 SSID_DICT = AP_signal_parser.get_SSID_dict(COURANT_SIGNAL_FILE)
 
